@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercícios HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <a href wm-atrib="exercicios/teste.html">00 - teste</a>
+        <a href wm-atrib="exercicios/texto.html">01 - texto 1</a>
+        <a href wm-atrib="exercicios/texto2.html">02 - texto 2</a>
+        <a href wm-atrib="exercicios/lista.html">03 - lista 1</a>
+        <a href wm-atrib="exercicios/listaAlinhada.html">04 - lista 2 - alinhada</a>
+        <a href wm-atrib="exercicios/links.html">05 - links</a>
+        <a href wm-atrib="exercicios/tabelas.html">06 - tabelas</a>
+        <a href wm-atrib="exercicios/form/form.html">07 - form</a>
+        <a href wm-atrib="exercicios/imagens.html">08 - imagens</a>
+        <a href wm-atrib="exercicios/video.html">09 - vídeo</a>
+        <a href wm-atrib="exercicios/TagsNaoVisuais.html">10 - Tags Não Visuais</a>
+	</nav>
+    <section id="conteudo"></section>
+    <footer>
+        curso Cod3r
+    </footer>
+
+    <script>
+        document.querySelectorAll('[wm-atrib]').forEach(a => {
+            const conteudo = document.getElementById('conteudo')
+
+            a.onclick = function(e) {
+                e.preventDefault()
+                fetch(a.getAttribute('wm-atrib'))
+                    .then(res => res.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+</html>
