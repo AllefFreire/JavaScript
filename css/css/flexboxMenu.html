@@ -27,6 +27,7 @@
             list-style: none;
             margin: 0;
             padding: 0;
+            display: flex;
         }
         
         .cabecalho a {
@@ -54,11 +55,19 @@
         /* ==================== */
         /* Solução com Flex Box */
         /* ==================== */
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .menu {
+            flex-grow: 10;
+        }
     </style>
 </head>
 
 <body>
-    <header class="cabecalho">
+    <header class="cabecalho flex">
         <div class="logo">
             <a href="#inicio">
                 <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
