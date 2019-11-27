@@ -10,15 +10,15 @@
     <div>Segundo</div>
     <div class="terceiro ultimo">.terceiro .ultimo</div>
     <script>              
-        document.getElementById('primeiro').classList.add('destaque')
+        document.getElementById('primeiro').classList.add('destaque') // adciona a class destaque
 
-        const myDivs = document.getElementsByTagName('div')
+        const myDivs = document.getElementsByTagName('div') // seleciona todas as div da página
 
-        Array.from(myDivs).forEach(elemnt => {
+        Array.from(myDivs).forEach(elemnt => { // transforma 'myDivs' em um array e remove a classe destaque
             elemnt.classList.remove('destaque')
         })
 
-        const arrayDivs = [...myDivs]
+        const arrayDivs = [...myDivs] // transforma 'myDivs' em um array dentro da variável 'arrayDivs'
         arrayDivs.forEach(elemnt => elemnt.classList.add('destaque'))
 
         const ultimoElemento = document.getElementsByClassName('ultimo')
