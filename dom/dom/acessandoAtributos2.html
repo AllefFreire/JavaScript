@@ -17,7 +17,25 @@
         </ul>
     </div>
     <script>
-        // ...
+        const list = document.querySelector('div ul[destino="escritório"]')
+        console.log('Elemento "ul"............')
+        console.log('childNodes', list.childNodes)
+        console.log('destino', list.destino) // undefined --- não reconhece atributos criados por usuários
+        console.log('getAttribute', list.getAttribute('destino'))
+        console.log('hasAttribute', list.hasAttribute('destino'))
+        list.setAttribute('destino', 'empresa')
+        list.setAttribute('status', 'aberto')
+        list.removeAttribute('destino')
+        console.log(list.dataset)
+        list.dataset.urgente = 3
+        console.log(list.dataset.urgente)
+        console.log(list.getAttribute('data-urgente'))
+
+        // cuidado
+        const label = document.querySelector('label')
+        console.log(label.for) // undefiner
+        console.log(label.htmlFor) // compras
+        console.log(label.getAttribute('for')) // compras
     </script>
 </body>
 
