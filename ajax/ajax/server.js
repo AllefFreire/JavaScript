@@ -11,7 +11,7 @@ app.use(BodyParser.json())
 
 // rotas
 app.get('/test', (req, res) => {
-    res.send('ok')
+    return res.send(new Date)
 })
 
 app.listen(3333)
